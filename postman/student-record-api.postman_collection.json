@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "7a3b0c6c-6bf4-4a58-8f57-6fd3d1a6e7f1",
+    "name": "Student Record API",
+    "description": "Postman collection for testing the Student Record API CRUD endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Student By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "students",
+            ":id"
+          ]
+        },
+        "urlencoded": []
+      },
+      "variable": [
+        {
+          "key": "id",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "name": "Add Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 21,\n  \"course\": \"Software Engineering\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Updated\",\n  \"age\": 22,\n  \"course\": \"Data Science\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "students",
+            ":id"
+          ]
+        }
+      },
+      "variable": [
+        {
+          "key": "id",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "students",
+            ":id"
+          ]
+        }
+      },
+      "variable": [
+        {
+          "key": "id",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3030"
+    }
+  ]
+}
