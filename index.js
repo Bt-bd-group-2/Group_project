@@ -27,7 +27,8 @@ let students = [
   { id: 5, name: "Aminieli", age: 22, course: "Cyber Security" },
   { id: 6, name: "Lovelyn Kalu", age: 24, course: "Software Engineering" },
   { id: 7, name: "Chiamaka Eze", age: 21, course: "Mass Communication" },
-  { id: 8, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" }
+  { id: 8, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
+  { id: 9, name: "Victoria Oladunke", age: 28, course: "Backend Development" }
 ];
 
 // 1. GET all students
