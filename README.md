@@ -47,3 +47,10 @@ git commit -m "Add student record for [Your Name]"
 - `POST /students` - add a student
 - `PUT /students/:id` - edit a student
 - `DELETE /students/:id` - remove a student
+<<<<<<< HEAD
+
+## Postman
+
+Import the collection from [postman/student-record-api.postman_collection.json](postman/student-record-api.postman_collection.json).
+=======
+>>>>>>> 67b15a40e4006b70f2b4c81608c9b52a590957e7

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Record API - Collaboration Guide</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5efe6;
+      --panel: #fffaf2;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-soft: #d9f2ef;
+      --border: #e5dccf;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.12), transparent 32%),
+        var(--bg);
+      min-height: 100vh;
+      padding: 32px 18px;
+    }
+
+    .card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(31, 41, 55, 0.12);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 42px 36px 28px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.15), rgba(217, 242, 239, 0.6));
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 32px 36px 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      color: var(--accent);
+    }
+
+    ol, ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .callout {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+    }
+
+    code {
+      background: rgba(15, 23, 42, 0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <header>
+      <h1>Student Record API Collaboration Guide</h1>
+      <p>
+        This page explains exactly what each group member should do after cloning the project.
+        The goal is for everyone to add one student record to the in-memory array in <code>index.js</code>
+        and commit the change cleanly so it can be merged into the main project.
+      </p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <section>
+          <h2>What to edit</h2>
+          <ol>
+            <li>Open <code>index.js</code>.</li>
+            <li>Find the in-memory <code>students</code> array.</li>
+            <li>Add one new student object under the existing sample records.</li>
+            <li>Use your own name, age, and course so your contribution is unique.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>How to work</h2>
+          <ol>
+            <li>Clone the repository.</li>
+            <li>Create a branch for your work.</li>
+            <li>Make only your own student record change.</li>
+            <li>Run the app and confirm that <code>GET /students</code> shows your record.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>How to commit</h2>
+          <ol>
+            <li>Stage your changes.</li>
+            <li>Write a clear commit message.</li>
+            <li>Push your branch to GitHub.</li>
+            <li>Open a pull request into <code>main</code>.</li>
+          </ol>
+        </section>
+      </div>
+
+      <div class="callout">
+        <strong>Recommended commit command</strong>
+        <p style="margin-top: 8px; color: var(--text);">
+          <code>git add index.js</code><br>
+          <code>git commit -m "Add student record for Your Name"</code><br>
+          <code>git push origin your-branch-name</code>
+        </p>
+      </div>
+
+      <section style="margin-top: 18px;">
+        <h2>Important rule</h2>
+        <ul>
+          <li>Do not delete or overwrite someone else’s student record.</li>
+          <li>If the array changed since your clone, pull the latest changes first and then add yours.</li>
+          <li>Merge through a pull request so the main branch stays clean.</li>
+        </ul>
+      </section>
+
+      <p class="footer-note">
+        The API runs at <code>http://localhost:3030</code> and this page is served from the <code>public</code> folder.
+      </p>
+    </main>
+  </article>
+</body>
+</html>

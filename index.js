@@ -6,19 +6,18 @@ const port = process.env.PORT || 3030;
 
 // Middleware to read JSON from request body
 app.use(express.json());
-
-app.use((err, req, res, next) => {
-    console.err(err.stack);
-    res.status(500).json({error: "Something went wrong"});
-  });
+app.use(express.static('public'));
 
 // In-memory student array. Replace with DB later
 let students = [
   { id: 1, name: "Aisha Bello", age: 20, course: "Computer Science" },
   { id: 2, name: "Tunde Ade", age: 22, course: "Mass Comm" },
-  { id: 3, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" }
+  
+  { id: 3, name: "Doyin Adetunji", age: 27, course: "Cybersecurity" },
+  { id: 4, name: "Odeyinka Tobiloba", age: 27, course: "Computer Science"},
+  { id: 5, name: "Aminieli", age: 22, course: "Cyber Security" },
+  { id: 6, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" }
 ];
-
 // 1. GET all students
 app.get('/students', (req, res) => {
   res.json(students);
@@ -58,9 +57,9 @@ app.put('/students/:id', (req, res) => {
   if (!student) return res.status(404).json({ error: "Student not found" });
 
   const { name, age, course } = req.body;
-  if (name) student.name = name;
-  if (age) student.age = age;
-  if (course) student.course = course;
+  if (name !== undefined) student.name = name;
+  if (age !== undefined) student.age = age;
+  if (course !== undefined) student.course = course;
 
   res.json(student);
 });
@@ -68,6 +67,9 @@ app.put('/students/:id', (req, res) => {
 // 5. DELETE student
 app.delete('/students/:id', (req, res) => {
   const id = parseInt(req.params.id);
+  const student = students.find(s => s.id === id);
+  if (!student) return res.status(404).json({ error: "Student not found" });
+
   students = students.filter(s => s.id !== id);
   res.json({ message: "Student deleted successfully" });
 });
@@ -75,5 +77,10 @@ app.delete('/students/:id', (req, res) => {
 app.get('/fail', (req, res) => {
     throw new Error("Ooops");
   });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Something went wrong" });
+});
   
 app.listen(port, () => console.log(`API running on http://localhost:${port}`));
