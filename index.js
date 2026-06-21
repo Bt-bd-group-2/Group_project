@@ -15,7 +15,8 @@ app.use((err, req, res, next) => {
 // In-memory student array. Replace with DB later
 let students = [
   { id: 1, name: "Aisha Bello", age: 20, course: "Computer Science" },
-  { id: 2, name: "Tunde Ade", age: 22, course: "Mass Comm" }
+  { id: 2, name: "Tunde Ade", age: 22, course: "Mass Comm" },
+  { id: 3, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" }
 ];
 
 // 1. GET all students
