@@ -1,12 +1,22 @@
 require('dotenv').config();
 
 const express = require('express');
+const path =require('path');
 const app = express();
 const port = process.env.PORT || 3030;
 
 // Middleware to read JSON from request body
 app.use(express.json());
-app.use(express.static('public'));
+
+//Middleware to send static file
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+//this Middleware for login the to the terminal
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url} - ${new Date}`);
+  next();
+});
 
 // In-memory student array. Replace with DB later
 let students = [
@@ -72,10 +82,19 @@ app.delete('/students/:id', (req, res) => {
   res.json({ message: "Student deleted successfully" });
 });
 
+//6. if some goes to "/" show index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+//is the rough for get fail request
 app.get('/fail', (req, res) => {
     throw new Error("Ooops");
   });
 
+
+//Middleware to handle error messages
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Something went wrong" });
