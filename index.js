@@ -16,7 +16,8 @@ let students = [
   { id: 3, name: "Doyin Adetunji", age: 27, course: "Cybersecurity" },
   { id: 4, name: "Odeyinka Tobiloba", age: 27, course: "Computer Science"},
   { id: 5, name: "Aminieli", age: 22, course: "Cyber Security" },
-  { id: 6, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" }
+  { id: 6, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
+  { id: 7, name: "Loise Wanjiru", age: 19, course: "Computer Science"}
 ];
 // 1. GET all students
 app.get('/students', (req, res) => {
