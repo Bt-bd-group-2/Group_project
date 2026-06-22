@@ -41,6 +41,12 @@ app.get('/students', (req, res) => {
 app.get('/students/:id', (req, res) => {
   const id = parseInt(req.params.id, 10);
 
+    if (isNaN(id)) {
+    return res.status(400).json({
+      error: `Invalid student ID, ${req.params.id} is not a number`
+    });
+  }
+
   const student = students.find(s => s.id === id);
   if (!student) return res.status(404).json({ error: "Student not found" });
   res.json(student);
@@ -70,7 +76,7 @@ app.put('/students/:id', (req, res) => {
   const id = parseInt(req.params.id, 10);
   if (isNaN(id)) {
     return res.status(400).json({
-      error: 'Invalid student ID'
+      error: `Invalid student ID, ${id} is not a number`
     });
   }
 
@@ -90,7 +96,7 @@ app.delete('/students/:id', (req, res) => {
   const id = parseInt(req.params.id, 10);
   if (isNaN(id)) {
     return res.status(400).json({
-      error: 'Invalid student ID'
+      error: `Invalid student ID, ${req.params.id} is not a number`
     });
   }
 
