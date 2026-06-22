@@ -29,7 +29,6 @@ let students = [
   { id: 7, name: "Chiamaka Eze", age: 21, course: "Mass Communication" },
   { id: 8, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
   { id: 9, name: "Omoloye Hassan", age: 20, course: "Computer Science" },
-  {id: 10, name: "Aries Tobells", age: 94, course: "Yoruba Technology"},
 ];
 
 // 1. GET all students
