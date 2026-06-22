@@ -29,6 +29,7 @@ let students = [
   { id: 7, name: "Chiamaka Eze", age: 21, course: "Mass Communication" },
   { id: 8, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
   { id: 9, name: "Omoloye Hassan", age: 20, course: "Computer Science" },
+  {id: 10, name: "Aries Tobells", age: 94, course: "Yoruba Technology"},
 ];
 
 // 1. GET all students
@@ -38,7 +39,8 @@ app.get('/students', (req, res) => {
 
 // 2. GET one student by id
 app.get('/students/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id, 10);
+
   const student = students.find(s => s.id === id);
   if (!student) return res.status(404).json({ error: "Student not found" });
   res.json(student);
@@ -65,7 +67,13 @@ app.post('/students', (req, res) => {
 
 // 4. PUT update student
 app.put('/students/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id, 10);
+  if (isNaN(id)) {
+    return res.status(400).json({
+      error: 'Invalid student ID'
+    });
+  }
+
   const student = students.find(s => s.id === id);
   if (!student) return res.status(404).json({ error: "Student not found" });
 
@@ -79,7 +87,13 @@ app.put('/students/:id', (req, res) => {
 
 // 5. DELETE student
 app.delete('/students/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id, 10);
+  if (isNaN(id)) {
+    return res.status(400).json({
+      error: 'Invalid student ID'
+    });
+  }
+
   const student = students.find(s => s.id === id);
   if (!student) return res.status(404).json({ error: "Student not found" });
 
