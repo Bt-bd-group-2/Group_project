@@ -25,12 +25,14 @@ let students = [
   { id: 3, name: "Doyin Adetunji", age: 27, course: "Cybersecurity" },
   { id: 4, name: "Odeyinka Tobiloba", age: 27, course: "Computer Science"},
   { id: 5, name: "Aminieli", age: 22, course: "Cyber Security" },
+  { id: 6, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
+  { id: 7, name: "Loise Wanjiru", age: 19, course: "Computer Science"}
   { id: 6, name: "Lovelyn Kalu", age: 24, course: "Software Engineering" },
   { id: 7, name: "Chiamaka Eze", age: 21, course: "Mass Communication" },
   { id: 8, name: "Oyinseye Okikiolaoluwa", age: 17, course: "Computer Science" },
   { id: 9, name: "Omoloye Hassan", age: 20, course: "Computer Science" },
-  {id: 10, name: "Aries Tobells", age:94, course: "Yoruba Technology" }
-  {id: 11, name: "Delphine Uwineza", age:22, course: "Software Engineering" }
+  { id: 10, name: "Aries Tobells", age:94, course: "Yoruba Technology" }
+  { id: 11, name: "Delphine Uwineza", age:22, course: "Software Engineering" }
 ];
 
 // 1. GET all students
