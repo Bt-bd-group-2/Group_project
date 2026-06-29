@@ -34,6 +34,7 @@ let students = [
   {id: 11, name: "Delphine Uwineza", age:22, course: "Software Engineering" },
   {id: 12, name: "Akande Imran", age:34, course: "Software development" },
   {id: 13, name: "Winstill Akoh Sani", age: 15, course: "Medicine" },
+  {id: 14, name: "Olaoluwa-femi Femi Solomon Babalola", age: 15, course: "Computer Science" }
 ];
 
 // 1. GET all students
